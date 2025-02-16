@@ -1,6 +1,7 @@
 import { useEffect, useRef } from "react";
 import { Map as LeafletMap, Icon, Marker } from "leaflet";
 import { vectorBasemapLayer } from "esri-leaflet-vector";
+import { featureLayer } from "esri-leaflet";
 import "leaflet/dist/leaflet.css";
 import icon from "leaflet/dist/images/marker-icon.png";
 import iconShadow from "leaflet/dist/images/marker-shadow.png";
@@ -27,14 +28,19 @@ function Map() {
       Marker.prototype.options.icon = DefaultIcon;
 
       const map = new LeafletMap(domNode);
-      map.setView([53.35014, -6.266155], 8);
+      map.setView([42.33143000,-83.04575000], 10);
 
       // Add a basemap
       vectorBasemapLayer("ArcGIS:Streets", {
         apiKey: "AAPTxy8BH1VEsoebNVZXo8HurKeWGROKs6AXs7Hc-k2efYWsT_0dGIBd2mtICar19gceNOQnVdEr5f7M45j7_CHOqI6o6mrJcRBPMjquGi29naeEJfE3s4t0FYm4Gxmk7nx6UKmbcjVYDvR2FSPdR8D85G1I_dJVXU3w6fZOAo4fwzNf3OWX6UbyqzlX9598f7IlJLPLE4R8bny0g7lVKILOpCiEA5ukVeWqe-hgiiyqdb4.AT1_Amh0U8XO"
       }).addTo(map);
 
-   
+      // Add a feature layer
+      const featureLayerUrl = "https://services.arcgis.com/P3ePLMYs2RVChkJx/arcgis/rest/services/ACS_Total_Population_Boundaries/FeatureServer/2";
+      featureLayer({
+        url: featureLayerUrl,
+        minZoom: 12,
+      }).addTo(map);
     }
 
     return () => {
