@@ -18,7 +18,7 @@ function Map() {
       const domNode = document.createElement("div");
       mapRefCurrent.appendChild(domNode);
 
-      // The default icon does not work due to webpack issues
+      
       let DefaultIcon = new Icon({
         iconUrl: icon,
         shadowUrl: iconShadow,

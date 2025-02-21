@@ -1,26 +1,37 @@
-import { useMap } from "react-leaflet";
-import { featureLayer } from "esri-leaflet";
+import React from "react";
+import EsriFeatureLayer from "@arcgis/core/layers/FeatureLayer";
+import {
+  LayerComponentProps,
+  createLayerComponent,
+} from "./createLayerComponent";
 
-interface FeatureLayerProps {
-  url: string;
-  minZoom?: number;
-  eventHandlers?: { [key: string]: (event: any) => void};
-}
+export type FeatureLayerEventHandlerFnMap = Partial<{
+  refresh: __esri.FeatureLayerRefreshEventHandler;
+  edits: __esri.FeatureLayerEditsEventHandler;
+  "layerview-create": __esri.FeatureLayerLayerviewCreateEventHandler;
+  "layerview-create-error": __esri.FeatureLayerLayerviewCreateErrorEventHandler;
+  "layerview-destroy": __esri.FeatureLayerLayerviewDestroyEventHandler;
+}>;
 
-const FeatureLayerComponent = ({ url, minZoom = 0, eventHandlers = {} }: FeatureLayerProps) => {
-  const map = useMap();
-
-  const layer = featureLayer({
-    url,
-    minZoom,
-  }).addTo(map);
-
-  // Attach event handlers
-  Object.keys(eventHandlers).forEach((event) => {
-    layer.on(event, eventHandlers[event]);
-  });
-
-  return null;
+const createLayer = (
+  properties: LayerComponentProps<
+    __esri.FeatureLayerProperties,
+    FeatureLayerEventHandlerFnMap
+  >,
+): __esri.FeatureLayer => {
+  return new EsriFeatureLayer(properties);
 };
 
-export default FeatureLayerComponent;
+/**
+ * A FeatureLayer component
+ *
+ * ArcGIS JS API Source Components:
+ * - [FeatureLayer](https://developers.arcgis.com/javascript/latest/api-reference/esri-layers-FeatureLayer.html)
+ */
+export const FeatureLayer = React.forwardRef<
+  __esri.FeatureLayer,
+  LayerComponentProps<
+    __esri.FeatureLayerProperties,
+    FeatureLayerEventHandlerFnMap
+  >
+>((properties, ref) => createLayerComponent(createLayer, ref, properties));
