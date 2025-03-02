@@ -1,23 +1,21 @@
-import "./App.css";
-import Map from "./Map";
-import Header from "./Header";
+import React from "react";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import Navbar from "./Header";
+import Home from "./pages/Home";
+import Library from "./pages/Library";
+import About from "./pages/About";
 
-
-function App() {
+const App: React.FC = () => {
   return (
-    <div className="App">
-      <Header/>
-        <div className="container mx-auto">
-        <Map/>
-        </div> 
-    </div>
+    <Router>
+      <Navbar />
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/library" element={<Library />} />
+        <Route path="/about" element={<About />} />
+      </Routes>
+    </Router>
   );
-}
+};
 
 export default App;
-
-
-// todo:
-// - add a feature layer component
-// - add a basemap layer component
-// - build custom lauyer
