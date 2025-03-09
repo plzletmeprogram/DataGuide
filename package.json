@@ -12,15 +12,22 @@
   "dependencies": {
     "@arcgis/core": "^4.32.0",
     "@arcgis/map-components": "^4.32.1",
+    "@headlessui/react": "^2.2.0",
+    "@tailwindcss/forms": "^0.5.10",
     "@tailwindcss/vite": "^4.0.9",
+    "@types/react-modal": "^3.16.3",
     "esri": "^0.0.1-security",
     "esri-leaflet": "^3.0.14",
     "esri-leaflet-vector": "^4.2.7",
+    "headless": "^1.2.0",
     "icons": "^1.0.0",
+    "install": "^0.13.0",
     "leaflet": "^1.9.4",
+    "npm": "^11.2.0",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
     "react-leaflet": "^5.0.0",
+    "react-modal": "^3.16.3",
     "react-router-dom": "^7.2.0"
   },
   "devDependencies": {
