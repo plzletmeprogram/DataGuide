@@ -2,19 +2,18 @@ import { Link } from "react-router-dom";
 
 const Navbar: React.FC = () => {
   return (
-    <nav className="bg-gray-300 w-full fixed top-3 left-0 z-50 h-14 shadow-md">
-      <div className="flex justify-between items-center px-4 h-full">
+    <nav className="bg-brandwheat  h-18 shadow-md flex-items-center py-5 p-2 mt-0 fixed w-full z-10 top-0" >
+      <div className="flex justify-between items-center px-12 h-full">
         
-        <div className="text-lg font-bold bg-white text-black border-2 border-black px-3 py-1 rounded-full font-family-logo">
+        <div className="text-4xl text-center font-bold text-darkceladon font-family-logo">
           <Link to="/">Urban Design Data Guide</Link>
-          <p className="font-family-sans text-xs mt-1 text-center">"Just another government data wrapper"</p>
         </div>
 
         <ul className="flex space-x-4">
           <li>
             <Link
               to="/"
-              className="flex justify-center items-center px-2 py-1 bg-red-600 text-white text-lg rounded-full hover:rounded-md hover:bg-red-400 hover:text-black transition-all duration-200"
+              className="relative text-2xl font-family-sans font-semibold text-darkceladon cursor-pointer before:absolute before:-bottom-1 before:left-0 before:w-0 before:h-[2px] before:bg-darkceladon before:transition-all before:duration-200 hover:before:w-full"
             >
               Home
             </Link>
@@ -22,7 +21,7 @@ const Navbar: React.FC = () => {
           <li>
             <Link
               to="/library"
-              className="flex justify-center items-center px-2 py-1 bg-red-600 text-white text-lg rounded-full hover:rounded-md hover:bg-red-400 hover:text-black transition-all duration-200"
+              className="relative text-2xl font-family-sans font-semibold text-darkceladon cursor-pointer before:absolute before:-bottom-1 before:left-0 before:w-0 before:h-[2px] before:bg-darkceladon before:transition-all before:duration-200 hover:before:w-full"
             >
               Library
             </Link>
@@ -30,7 +29,7 @@ const Navbar: React.FC = () => {
           <li>
             <Link
               to="/about"
-              className="flex justify-center items-center px-2 py-1 bg-red-600 text-white text-lg rounded-full hover:rounded-md hover:bg-red-400 hover:text-black transition-all duration-200"
+              className="relative text-2xl font-family-sans font-semibold text-darkceladon cursor-pointer before:absolute before:-bottom-1 before:left-0 before:w-0 before:h-[2px] before:bg-darkceladon before:transition-all before:duration-200 hover:before:w-full"
             >
               About
             </Link>

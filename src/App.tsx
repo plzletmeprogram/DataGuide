@@ -4,19 +4,20 @@ import Navbar from "./Header";
 import Home from "./pages/Home";
 import Library from "./pages/Library";
 import About from "./pages/About";
-import '@cityofdetroit/cod-design-system/src/components/atoms/ButtonStyles.css';
-import '@cityofdetroit/cod-design-system/src/shared/variables.css';
+
 
 
 const App: React.FC = () => {
   return (
     <Router>
       <Navbar />
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/library" element={<Library />} />
-        <Route path="/about" element={<About />} />
-      </Routes>
+      <div className="h-screen bg-celadon pt-24 px-14 h-90vh ">
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/library" element={<Library />} />
+          <Route path="/about" element={<About />} />
+        </Routes>
+      </div>
     </Router>
   );
 };
