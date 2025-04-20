@@ -4,6 +4,9 @@ import Navbar from "./Header";
 import Home from "./pages/Home";
 import Library from "./pages/Library";
 import About from "./pages/About";
+import '@cityofdetroit/cod-design-system/src/components/atoms/ButtonStyles.css';
+import '@cityofdetroit/cod-design-system/src/shared/variables.css';
+
 
 const App: React.FC = () => {
   return (
