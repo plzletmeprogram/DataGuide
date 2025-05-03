@@ -1,7 +1,4 @@
-import {React, useEffect,useState} from "react";
 import TypingEffect from "../components/misc/TypingEffect";
-import SourcesBanner from "../components/misc/SourcesBanner";
-
 
 const Home: React.FC = () => {
   return (

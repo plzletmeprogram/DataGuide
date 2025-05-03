@@ -1,36 +1,18 @@
-import { Navigation, Pagination } from "swiper/modules";
 import DataCard from "./DataCard";
 import ThemeFilter from "../filterbar/ThemeFilter";
-import { Swiper, SwiperSlide } from "swiper/react";
-import "swiper/css";
-import "swiper/css/navigation";
-import "swiper/css/pagination";
 import data from "../../data/data.json";
 
 const DataBoard = () => {
     return (
       <div
       >
+     
         <ThemeFilter />
-        <Swiper
-          modules={[Navigation, Pagination]}
-          spaceBetween={6}
-          slidesPerView={8} // Adjust for responsiveness
-          navigation
-          pagination={{ clickable: true }}
-          className="w-full"
-        >
-          {data.map((item, index) => (
-            <SwiperSlide key={index}>
-              <DataCard
-                title={item.title}
-                description={item.description}
-                source={item.source}
-                isSpatial={item.isSpatial}
-              />
-            </SwiperSlide>
+        <div className="grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3">
+          {data.map((item) => (
+            <DataCard key={item.id} data={item} />
           ))}
-        </Swiper>
+        </div>
       </div>
     );
   };
