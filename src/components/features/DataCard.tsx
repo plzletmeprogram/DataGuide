@@ -9,7 +9,7 @@ interface DataCardProps {
 
 }
 
-const DataCard: React.FC<DataCardProps> = ({ title, description, source, isSpatial }) => {
+const DataCard: React.FC<DataCardProps> = ({ title, description }) => {
 
   return (
     <div className="max-w-sm rounded overflow-hidden shadow-lg text-darkceladon bg-brandwheat p-4 m-4">
