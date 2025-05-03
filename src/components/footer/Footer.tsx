@@ -2,7 +2,7 @@ import { FaGithub, FaLinkedin } from "react-icons/fa"; // Import icons
 
 const Footer: React.FC = () => {
   return (
-    <footer className="fixed bottom-0 w-full bg-brandwheat text-darkceladon py-4 px-6 flex justify-between items-center">
+    <footer className="fixed bottom-0 w-full bg-brandwheat text-darkceladon  py-3 px-10 flex justify-between items-center ">
       <p>2025 Urban Design Guide</p>
       <div className="flex space-x-4 ml-auto">
         <a href="https://github.com/your-profile" target="_blank" rel="noopener noreferrer">

@@ -1,63 +1,72 @@
 [
-    {
-      "title": "Data Card 1",
-      "description": "Description for Data Card 1",
-      "source": "https://www.example1.com",
-      "isSpatial": false
-    },
-    {
-      "title": "Data Card 2",
-      "description": "Description for Data Card 2",
-      "source": "https://www.example2.com",
-      "isSpatial": false
-    },
-    {
-      "title": "Data Card 3",
-      "description": "Description for Data Card 3",
-      "source": "https://www.example3.com",
-      "isSpatial": false
-    },
-    {
-      "title": "Data Card 4",
-      "description": "Description for Data Card 4",
-      "source": "https://www.example4.com",
-      "isSpatial": false
-    },
-    {
-      "title": "Data Card 5",
-      "description": "Description for Data Card 5",
-      "source": "https://www.example5.com",
-      "isSpatial": false
-    },
-    {
-      "title": "Data Card 6",
-      "description": "Description for Data Card 6",
-      "source": "https://www.example6.com",
-      "isSpatial": false
-    },
-    {
-      "title": "Data Card 7",
-      "description": "Description for Data Card 7",
-      "source": "https://www.example7.com",
-      "isSpatial": false
-    },
-    {
-      "title": "Data Card 8",
-      "description": "Description for Data Card 8",
-      "source": "https://www.example8.com",
-      "isSpatial": false
-    },
-    {
-      "title": "Data Card 9",
-      "description": "Description for Data Card 9",
-      "source": "https://www.example9.com",
-      "isSpatial": false
-    },
-    {
-      "title": "Data Card 10",
-      "description": "Description for Data Card 10",
-      "source": "https://www.example10.com",
-      "isSpatial": false
-    }
-  ]
-  
+  {
+    "title": "Data Card 1",
+    "description": "Description for Data Card 1",
+    "source": "U.S. Census",
+    "theme": "Boundaries",
+    "isSpatial": false
+  },
+  {
+    "title": "Data Card 2",
+    "description": "Description for Data Card 2",
+    "source": "U.S. EPA",
+    "theme": "Health",
+    "isSpatial": false
+  },
+  {
+    "title": "Data Card 3",
+    "description": "Description for Data Card 3",
+    "source": "ESRI",
+    "theme": "Transportation",
+    "isSpatial": false
+  },
+  {
+    "title": "Data Card 4",
+    "description": "Description for Data Card 4",
+    "source": "U.S. Census",
+    "theme": "Government",
+    "isSpatial": false
+  },
+  {
+    "title": "Data Card 5",
+    "description": "Description for Data Card 5",
+    "source": "U.S. EPA",
+    "theme": "Boundaries",
+    "isSpatial": false
+  },
+  {
+    "title": "Data Card 6",
+    "description": "Description for Data Card 6",
+    "source": "ESRI",
+    "theme": "Health",
+    "isSpatial": false
+  },
+  {
+    "title": "Data Card 7",
+    "description": "Description for Data Card 7",
+    "source": "U.S. Census",
+    "theme": "Transportation",
+    "isSpatial": false
+  },
+  {
+    "title": "Data Card 8",
+    "description": "Description for Data Card 8",
+    "source": "U.S. EPA",
+    "theme": "Government",
+    "isSpatial": false
+  },
+  {
+    "title": "Data Card 9",
+    "description": "Description for Data Card 9",
+    "source": "ESRI",
+    "theme": "Boundaries",
+    "isSpatial": false
+  },
+  {
+    "title": "Data Card 10",
+    "description": "Description for Data Card 10",
+    "source": "U.S. Census",
+    "theme": "Health",
+    "isSpatial": false
+  }
+]
