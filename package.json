@@ -12,7 +12,6 @@
   "dependencies": {
     "@arcgis/core": "^4.32.0",
     "@arcgis/map-components": "^4.32.1",
-    "@cityofdetroit/cod-design-system": "^0.0.1",
     "@fortawesome/fontawesome-svg-core": "^6.7.2",
     "@fortawesome/free-brands-svg-icons": "^6.7.2",
     "@fortawesome/react-fontawesome": "^0.2.2",
@@ -27,6 +26,7 @@
     "icons": "^1.0.0",
     "install": "^0.13.0",
     "leaflet": "^1.9.4",
+    "lodash": "^4.17.21",
     "npm": "^11.2.0",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
