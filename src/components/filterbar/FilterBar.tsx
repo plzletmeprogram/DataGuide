@@ -15,7 +15,7 @@ interface FilterBarProps {
   setSearchParams: (params: Record<string, string[]>) => void;
 }
 
-const FilterBar: React.FC<FilterBarProps> = ({ setFilters, filters, setSearchParams }) => {
+const FilterBar: React.FC<FilterBarProps> = ({ setFilters, setSearchParams }) => {
   const [searchParams] = useSearchParams();
   const [selectedSources, setSelectedSources] = useState<string[]>(searchParams.getAll("source") || []);
   const [selectedThemes, setSelectedThemes] = useState<string[]>(searchParams.getAll("theme") || []);
