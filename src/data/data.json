@@ -1,72 +1,122 @@
 [
   {
     "title": "Data Card 1",
-    "description": "Description for Data Card 1",
+    "description": "Demographic trends across U.S. regions.",
     "source": "U.S. Census",
-    "theme": "Boundaries",
-    "isSpatial": false
+    "theme": ["Boundaries", "Demographics"],
+    "isSpatial": true,
+    "endpoint": "https://api.uscensus.gov/data-card-1",
+    "sourceUrl": "https://www.census.gov",
+    "image": "https://www.arcgis.com/sharing/rest/content/items/7d4cc55ecaef4ceb82c8d05b13e0d049/info/thumbnail/thumbnail1623893878565.png"
   },
   {
     "title": "Data Card 2",
-    "description": "Description for Data Card 2",
+    "description": "Air quality index readings from monitored stations.",
     "source": "U.S. EPA",
-    "theme": "Health",
-    "isSpatial": false
+    "theme": ["Health", "Environment"],
+    "isSpatial": true,
+    "endpoint": "https://api.usepa.gov/data-card-2",
+    "sourceUrl": "https://www.epa.gov",
+    "image": "https://www.arcgis.com/sharing/rest/content/items/7d4cc55ecaef4ceb82c8d05b13e0d049/info/thumbnail/thumbnail1623893878565.png"
   },
   {
     "title": "Data Card 3",
-    "description": "Description for Data Card 3",
+    "description": "Traffic congestion analysis for urban planning.",
     "source": "ESRI",
-    "theme": "Transportation",
-    "isSpatial": false
+    "theme": ["Transportation", "Infrastructure"],
+    "isSpatial": true,
+    "endpoint": "https://api.esri.com/data-card-3",
+    "sourceUrl": "https://www.esri.com",
+    "image": "https://www.arcgis.com/sharing/rest/content/items/7d4cc55ecaef4ceb82c8d05b13e0d049/info/thumbnail/thumbnail1623893878565.png"
   },
   {
     "title": "Data Card 4",
-    "description": "Description for Data Card 4",
+    "description": "Census block data with socio-economic indicators.",
     "source": "U.S. Census",
-    "theme": "Government",
-    "isSpatial": false
+    "theme": ["Government", "Population"],
+    "isSpatial": false,
+    "endpoint": "https://api.uscensus.gov/data-card-4",
+    "sourceUrl": "https://www.census.gov",
+    "image": "https://www.arcgis.com/sharing/rest/content/items/7d4cc55ecaef4ceb82c8d05b13e0d049/info/thumbnail/thumbnail1623893878565.png"
   },
   {
     "title": "Data Card 5",
-    "description": "Description for Data Card 5",
+    "description": "Wetlands conservation and pollution risk assessments.",
     "source": "U.S. EPA",
-    "theme": "Boundaries",
-    "isSpatial": false
+    "theme": ["Boundaries", "Environment"],
+    "isSpatial": true,
+    "endpoint": "https://api.usepa.gov/data-card-5",
+    "sourceUrl": "https://www.epa.gov",
+    "image": "https://www.arcgis.com/sharing/rest/content/items/7d4cc55ecaef4ceb82c8d05b13e0d049/info/thumbnail/thumbnail1623893878565.png"
   },
   {
     "title": "Data Card 6",
-    "description": "Description for Data Card 6",
+    "description": "Healthcare facility locations and access analysis.",
     "source": "ESRI",
-    "theme": "Health",
-    "isSpatial": false
+    "theme": ["Health", "Infrastructure"],
+    "isSpatial": true,
+    "endpoint": "https://api.esri.com/data-card-6",
+    "sourceUrl": "https://www.esri.com",
+    "image": "https://www.arcgis.com/sharing/rest/content/items/7d4cc55ecaef4ceb82c8d05b13e0d049/info/thumbnail/thumbnail1623893878565.png"
   },
   {
     "title": "Data Card 7",
-    "description": "Description for Data Card 7",
+    "description": "Public transit accessibility and commuter patterns.",
     "source": "U.S. Census",
-    "theme": "Transportation",
-    "isSpatial": false
+    "theme": ["Transportation", "Urban Planning"],
+    "isSpatial": true,
+    "endpoint": "https://api.uscensus.gov/data-card-7",
+    "sourceUrl": "https://www.census.gov",
+    "image": "https://www.arcgis.com/sharing/rest/content/items/7d4cc55ecaef4ceb82c8d05b13e0d049/info/thumbnail/thumbnail1623893878565.png"
   },
   {
     "title": "Data Card 8",
-    "description": "Description for Data Card 8",
+    "description": "Government spending analysis for city infrastructure.",
     "source": "U.S. EPA",
-    "theme": "Government",
-    "isSpatial": false
+    "theme": ["Government", "Infrastructure"],
+    "isSpatial": false,
+    "endpoint": "https://api.usepa.gov/data-card-8",
+    "sourceUrl": "https://www.epa.gov",
+    "image": "https://www.arcgis.com/sharing/rest/content/items/7d4cc55ecaef4ceb82c8d05b13e0d049/info/thumbnail/thumbnail1623893878565.png"
   },
   {
     "title": "Data Card 9",
-    "description": "Description for Data Card 9",
+    "description": "Land use and development trends across metropolitan regions.",
     "source": "ESRI",
-    "theme": "Boundaries",
-    "isSpatial": false
+    "theme": ["Boundaries", "Urban Development"],
+    "isSpatial": true,
+    "endpoint": "https://api.esri.com/data-card-9",
+    "sourceUrl": "https://www.esri.com",
+    "image": "https://www.arcgis.com/sharing/rest/content/items/7d4cc55ecaef4ceb82c8d05b13e0d049/info/thumbnail/thumbnail1623893878565.png"
   },
   {
     "title": "Data Card 10",
-    "description": "Description for Data Card 10",
+    "description": "Healthcare affordability statistics by region.",
     "source": "U.S. Census",
-    "theme": "Health",
-    "isSpatial": false
+    "theme": ["Health", "Economic Indicators"],
+    "isSpatial": false,
+    "endpoint": "https://api.uscensus.gov/data-card-10",
+    "sourceUrl": "https://www.census.gov",
+    "image": "https://www.arcgis.com/sharing/rest/content/items/7d4cc55ecaef4ceb82c8d05b13e0d049/info/thumbnail/thumbnail1623893878565.png"
+  },
+  {
+    "title": "Data Card 11",
+    "description": "Crime statistics mapped at neighborhood levels.",
+    "source": "FBI",
+    "theme": ["Government", "Safety"],
+    "isSpatial": true,
+    "endpoint": "https://api.fbi.gov/data-card-11",
+    "sourceUrl": "https://www.fbi.gov",
+    "image": "https://www.arcgis.com/sharing/rest/content/items/7d4cc55ecaef4ceb82c8d05b13e0d049/info/thumbnail/thumbnail1623893878565.png"
+  },
+  {
+    "title": "Data Card 12",
+    "description": "Climate change impact assessments on urban infrastructure.",
+    "source": "ESRI",
+    "theme": ["Environment", "Urban Planning"],
+    "isSpatial": true,
+    "endpoint": "https://api.esri.com/data-card-12",
+    "sourceUrl": "https://www.esri.com",
+    "image": "https://www.arcgis.com/sharing/rest/content/items/7d4cc55ecaef4ceb82c8d05b13e0d049/info/thumbnail/thumbnail1623893878565.png"
   }
 ]

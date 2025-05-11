@@ -1,29 +1,52 @@
-import { useState } from 'react'
-import { Listbox, ListboxButton, ListboxOption, ListboxOptions } from '@headlessui/react'
+import { useState, useEffect } from "react";
+import { Listbox, ListboxButton, ListboxOption, ListboxOptions } from "@headlessui/react";
+import { useSearchParams, useLocation } from "react-router-dom";
+import data from "../../data/data.json"; // Ensure correct path
 
-const people = [
-    { id: 1, name: 'Durward Reynolds' },
-    { id: 2, name: 'Kenton Towne' },
-    { id: 3, name: 'Therese Wunsch' },
-    { id: 4, name: 'Benedict Kessler' },
-    { id: 5, name: 'Katelyn Rohan' },
-  ]
+// Extract unique sources dynamically
+const sources = Array.from(new Set(data.map((item) => item.source))).map((source, index) => ({
+  id: index + 1,
+  name: source
+}));
 
 const SourceFilter = () => {
-    
-    const [selectedPerson, setSelectedPerson] = useState(people[0])
+  const [searchParams, setSearchParams] = useSearchParams();
+  const location = useLocation();
 
-    return (
-      <Listbox value={selectedPerson} onChange={setSelectedPerson}>
-        <ListboxButton>{selectedPerson.name}</ListboxButton>
-        <ListboxOptions anchor="bottom">
-          {people.map((person) => (
-            <ListboxOption key={person.id} value={person} className="data-focus:bg-blue-100">
-              {person.name}
-            </ListboxOption>
-          ))}
-        </ListboxOptions>
-      </Listbox>
-    )
-  }
+  // Check for an existing source param
+  const sourceParam = searchParams.get("source");
+  const [selectedSource, setSelectedSource] = useState(
+    sourceParam ? sources.find((s) => s.name === sourceParam) : null
+  );
+
+  // Ensure URL resets when a user **reloads or visits** the page without filtering
+  useEffect(() => {
+    if (!sourceParam) {
+      setSearchParams({});
+    }
+  }, [location.pathname]); // Runs only when the user changes pages
+
+  // Update search params only when the user **actively selects** a source
+  useEffect(() => {
+    if (selectedSource) {
+      setSearchParams({ source: selectedSource.name });
+    }
+  }, [selectedSource]);
+
+  return (
+    <Listbox value={selectedSource} onChange={setSelectedSource}>
+      <ListboxButton className="border px-4 py-2 rounded-lg bg-white shadow-md">
+        {selectedSource ? selectedSource.name : "Select a source"}
+      </ListboxButton>
+      <ListboxOptions anchor="bottom" className="bg-white shadow-lg border rounded-lg p-2">
+        {sources.map((source) => (
+          <ListboxOption key={source.id} value={source} className="cursor-pointer hover:bg-blue-100 p-2">
+            {source.name}
+          </ListboxOption>
+        ))}
+      </ListboxOptions>
+    </Listbox>
+  );
+};
+
 export default SourceFilter;
