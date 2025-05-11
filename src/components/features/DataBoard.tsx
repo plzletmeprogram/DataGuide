@@ -1,30 +1,29 @@
-import { useSearchParams } from "react-router-dom";
-import SourceFilter from "../filterbar/SourceFilter"; // Add the filter component
 import DataCard from "./DataCard";
 import data from "../../data/data.json";
 
-const DataBoard = () => {
-  const [searchParams] = useSearchParams();
-  const selectedSource = searchParams.get("source");
+interface Filters {
+  source: string[];
+  theme: string[];
+}
 
-  // Filter data based on selected source
-  const filteredData = selectedSource
-    ? data.filter((item) => item.source === selectedSource)
-    : data;
+interface DataBoardProps {
+  filters: Filters;
+}
+
+const DataBoard: React.FC<DataBoardProps> = ({ filters }) => {
+  const { source, theme } = filters;
+  console.log(filters)
+  const filteredData = data.filter(
+    (item) =>
+      (source.length === 0 || source.includes(item.source)) &&
+      (theme.length === 0 || item.theme.some((t: string) => theme.includes(t)))
+  );
 
   return (
     <div className="p-4">
-      <SourceFilter /> {/* Add the filter above the data cards */}
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-2">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-2">
         {filteredData.map((item, index) => (
-          <DataCard
-            key={index}
-            title={item.title}
-            description={item.description}
-            source={item.source}
-            isSpatial={item.isSpatial}
-            imgSource={item.image}
-          />
+          <DataCard endpoint= {item.endpoint} sourceUrl= {item.sourceUrl} key={index} isSpatial={item.isSpatial} title={item.title} description={item.description} source={item.source} themes={item.theme} imgSource={item.image} />
         ))}
       </div>
     </div>

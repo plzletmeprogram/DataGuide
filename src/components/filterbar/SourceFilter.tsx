@@ -1,51 +1,39 @@
-import { useState, useEffect } from "react";
-import { Listbox, ListboxButton, ListboxOption, ListboxOptions } from "@headlessui/react";
-import { useSearchParams, useLocation } from "react-router-dom";
-import data from "../../data/data.json"; // Ensure correct path
+import { Button } from "@headlessui/react";
+import data from "../../data/data.json";
 
-// Extract unique sources dynamically
-const sources = Array.from(new Set(data.map((item) => item.source))).map((source, index) => ({
-  id: index + 1,
-  name: source
-}));
+const sources = Array.from(new Set(data.map((item) => item.source)));
 
-const SourceFilter = () => {
-  const [searchParams, setSearchParams] = useSearchParams();
-  const location = useLocation();
+interface SourceFilterProps {
+  setSelectedSources: (sources: string[]) => void;
+  selectedSources: string[];
+}
 
-  // Check for an existing source param
-  const sourceParam = searchParams.get("source");
-  const [selectedSource, setSelectedSource] = useState(
-    sourceParam ? sources.find((s) => s.name === sourceParam) : null
-  );
+const SourceFilter: React.FC<SourceFilterProps> = ({ setSelectedSources, selectedSources }) => {
+  const toggleSource = (source: string) => {
+    const newSources = selectedSources.includes(source)
+      ? selectedSources.filter((s) => s !== source)
+      : [...selectedSources, source];
 
-  // Ensure URL resets when a user **reloads or visits** the page without filtering
-  useEffect(() => {
-    if (!sourceParam) {
-      setSearchParams({});
-    }
-  }, [location.pathname]); // Runs only when the user changes pages
-
-  // Update search params only when the user **actively selects** a source
-  useEffect(() => {
-    if (selectedSource) {
-      setSearchParams({ source: selectedSource.name });
-    }
-  }, [selectedSource]);
+    setSelectedSources(newSources); // Update selected sources
+  };
 
   return (
-    <Listbox value={selectedSource} onChange={setSelectedSource}>
-      <ListboxButton className="border px-4 py-2 rounded-lg bg-white shadow-md">
-        {selectedSource ? selectedSource.name : "Select a source"}
-      </ListboxButton>
-      <ListboxOptions anchor="bottom" className="bg-white shadow-lg border rounded-lg p-2">
+    <div className="bg-white shadow-lg rounded-lg p-4">
+      <h3 className="font-semibold mb-2">Filter by Source:</h3>
+      <div className="grid grid-cols-2 gap-2">
         {sources.map((source) => (
-          <ListboxOption key={source.id} value={source} className="cursor-pointer hover:bg-blue-100 p-2">
-            {source.name}
-          </ListboxOption>
+          <Button
+            key={source}
+            onClick={() => toggleSource(source)}
+            className={`px-4 py-2 text-sm rounded-lg transition ${
+              selectedSources.includes(source) ? "bg-darkceladon text-white" : "bg-white border border-darkceladon text-darkceladon"
+            }`}
+          >
+            {source}
+          </Button>
         ))}
-      </ListboxOptions>
-    </Listbox>
+      </div>
+    </div>
   );
 };
 
