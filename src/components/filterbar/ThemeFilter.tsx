@@ -1,7 +1,5 @@
 import { Button } from "@headlessui/react";
-import data from "../../data/data.json";
-
-const themes = Array.from(new Set(data.flatMap((item) => item.theme)));
+import useGetData, { DataItem } from "../../hooks/GetData";
 
 interface ThemeFilterProps {
   setSelectedThemes: (themes: string[]) => void;
@@ -9,12 +7,15 @@ interface ThemeFilterProps {
 }
 
 const ThemeFilter: React.FC<ThemeFilterProps> = ({ setSelectedThemes, selectedThemes }) => {
+  const data: DataItem[] = useGetData(); 
+  const themes = Array.from(new Set(data.flatMap((item) => item.attributes.Theme || []))); 
+
   const toggleTheme = (theme: string) => {
     const newThemes = selectedThemes.includes(theme)
       ? selectedThemes.filter((t) => t !== theme)
       : [...selectedThemes, theme];
 
-    setSelectedThemes(newThemes); // Update selected themes
+    setSelectedThemes(newThemes); 
   };
 
   return (

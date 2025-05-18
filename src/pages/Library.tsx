@@ -15,7 +15,6 @@ const Library: React.FC = () => {
     theme: searchParams.getAll("theme") || [],
   });
 
-  // Sync filters with URL whenever it changes
   useEffect(() => {
     const newFilters = {
       source: searchParams.getAll("source") || [],
@@ -25,13 +24,16 @@ const Library: React.FC = () => {
   }, [searchParams]);
 
   return (
-    <div className="relative flex flex-col h-screen overflow-hidden p-4">
-      <div className="bg-white shadow-lg rounded-lg border-2 border-[#5F9EA0] h-[80vh] flex-grow-0 mx-auto w-[90vw] p-4">
-        <div className="flex h-full relative">
-          <div className="w-[20%] h-full pr-4 border-r-2 border-[#5F9EA0] absolute left-0">
+    <div className="flex items-center justify-center h-screen p-4"> {/* Ensures vertical & horizontal centering */}
+      <div className="bg-white shadow-lg rounded-lg border-2 border-[#5F9EA0] w-[90vw] h-150 max-h-1300 p-4 flex flex-col"> {/* Ensures it's fully visible */}
+        <div className="flex w-full h-full">
+          {/* Sidebar */}
+          <div className="w-[25%] h-full pr-4 border-r-2 border-[#5F9EA0]">
             <FilterBar setFilters={setFilters} filters={filters} setSearchParams={setSearchParams} />
           </div>
-          <div className="w-[80%] overflow-auto h-full ml-[20%]">
+
+          {/* Content Area */}
+          <div className="w-[80%] overflow-auto h-full">
             <DataBoard filters={filters} />
           </div>
         </div>

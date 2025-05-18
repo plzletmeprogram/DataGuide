@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 
 const Navbar: React.FC = () => {
   return (
-    <nav className="bg-brandwheat  h-18 shadow-md flex-items-center py-5 p-2 mt-0 fixed w-full z-10 top-0" >
+    <nav className="bg-brandwheat  h-12 shadow-md flex-items-center py-5 p-2 mt-0 fixed w-full z-10 top-0" >
       <div className="flex justify-between items-center px-12 h-full">
         
         <div className="text-4xl text-center font-bold text-darkceladon font-family-logo">

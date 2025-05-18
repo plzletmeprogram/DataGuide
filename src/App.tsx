@@ -12,7 +12,7 @@ const App: React.FC = () => {
   return (
     <Router>
       <Navbar />
-      <div className="overflow-hidden inset-0 pt-24 px-14 h-screen w-full bg-white bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-[size:24px_24px]">
+      <div className="overflow-hidden inset-0 pt-1 px-12 h-screen w-full bg-white bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-[size:24px_24px]">
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/library" element={<Library />} />
