@@ -21,10 +21,10 @@ const SourceFilter: React.FC<SourceFilterProps> = ({ setSelectedSources, selecte
   return (
     <div className="bg-white rounded-lg ">
       <h3 className="font-semibold mb-2">Filter by Source:</h3>
-      
-     
-      <div className="max-h-80 overflow-y-auto   bg- p-2 rounded-lg">
-        <div className="grid grid-cols-2 gap-2">
+
+      <div className="max-h-80  p-2 rounded-lg">
+        {/* Single-column layout on smaller screens, two columns on larger screens */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
           {sources.map((source) => (
             <Button
               key={source}

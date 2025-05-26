@@ -24,16 +24,15 @@ const Library: React.FC = () => {
   }, [searchParams]);
 
   return (
-    <div className="flex items-center justify-center h-screen p-4"> {/* Ensures vertical & horizontal centering */}
-      <div className="bg-white shadow-lg rounded-lg border-2 border-[#5F9EA0] w-[90vw] h-150 max-h-1300 p-4 flex flex-col"> {/* Ensures it's fully visible */}
+    <div className="flex items-center justify-center mt-[60px] sm:mt-[50px] md:mt-[40px] lg:mt-[40px] min-h-[calc(100vh-80px)]">
+     
+      <div className="bg-white shadow-lg rounded-lg border-2 border-[#5F9EA0] max-w-[85vw] w-[90vw] max-h-[calc(100vh-120px)] p-2 sm:p-3 md:p-4 lg:p-5 mx-auto overflow-hidden flex flex-col">
         <div className="flex w-full h-full">
-          {/* Sidebar */}
-          <div className="w-[25%] h-full pr-4 border-r-2 border-[#5F9EA0]">
+        
+          <div className="w-[40%] sm:w-[35%] md:w-[30%] lg:w-[25%] h-full pr-2 sm:pr-4 border-r-2 border-[#5F9EA0] sticky top-0 self-start">
             <FilterBar setFilters={setFilters} filters={filters} setSearchParams={setSearchParams} />
           </div>
-
-          {/* Content Area */}
-          <div className="w-[80%] overflow-auto h-full">
+          <div className="w-[60%] sm:w-[65%] md:w-[70%] lg:w-[75%] overflow-auto max-h-[calc(100vh-180px)]">
             <DataBoard filters={filters} />
           </div>
         </div>
@@ -41,5 +40,6 @@ const Library: React.FC = () => {
     </div>
   );
 };
+
 
 export default Library;
