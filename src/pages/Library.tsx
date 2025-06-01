@@ -24,7 +24,7 @@ const Library: React.FC = () => {
   }, [searchParams]);
 
   return (
-    <main className="flex w-full h-full pt-12 px-2 max-w-[1600px] mx-auto bg-white text-black">
+    <main className="flex w-full h-full pt-12 px-2 max-w-[2000px] mx-auto bg-white text-black">
       {/* FilterBar on the left */}
       <aside className="w-full max-w-xs min-w-[220px] pr-4 flex flex-col">
         <FilterBar setFilters={setFilters} filters={filters} setSearchParams={setSearchParams} />
