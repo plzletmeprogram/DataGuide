@@ -24,22 +24,19 @@ const Library: React.FC = () => {
   }, [searchParams]);
 
   return (
-    <div className="flex items-center justify-center mt-[60px] sm:mt-[50px] md:mt-[40px] lg:mt-[40px] min-h-[calc(100vh-80px)]">
-     
-      <div className="bg-white shadow-lg rounded-lg border-2 border-[#5F9EA0] max-w-[85vw] w-[90vw] max-h-[calc(100vh-120px)] p-2 sm:p-3 md:p-4 lg:p-5 mx-auto overflow-hidden flex flex-col">
-        <div className="flex w-full h-full">
-        
-          <div className="w-[40%] sm:w-[35%] md:w-[30%] lg:w-[25%] h-full pr-2 sm:pr-4 border-r-2 border-[#5F9EA0] sticky top-0 self-start">
-            <FilterBar setFilters={setFilters} filters={filters} setSearchParams={setSearchParams} />
-          </div>
-          <div className="w-[60%] sm:w-[65%] md:w-[70%] lg:w-[75%] overflow-auto max-h-[calc(100vh-180px)]">
-            <DataBoard filters={filters} />
-          </div>
-        </div>
-      </div>
-    </div>
+    <main className="flex w-full h-full pt-12 px-2 max-w-[1600px] mx-auto bg-white text-black">
+      {/* FilterBar on the left */}
+      <aside className="w-full max-w-xs min-w-[220px] pr-4 flex flex-col">
+        <FilterBar setFilters={setFilters} filters={filters} setSearchParams={setSearchParams} />
+      </aside>
+      {/* Divider - only as tall as the content */}
+      <div className="w-px bg-black self-stretch mx-2" />
+      {/* DataBoard fills the rest */}
+      <section className="flex-1 overflow-auto">
+        <DataBoard filters={filters} />
+      </section>
+    </main>
   );
 };
-
 
 export default Library;

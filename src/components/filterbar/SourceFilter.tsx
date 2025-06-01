@@ -1,14 +1,29 @@
 import { Button } from "@headlessui/react";
-import useGetData, { DataItem } from "../../hooks/GetData";
+import { useGetCardInfo } from "../../hooks/useGetCardInfo";
 
 interface SourceFilterProps {
   setSelectedSources: (sources: string[]) => void;
   selectedSources: string[];
 }
 
+// Define the type for the data items
+interface CardInfoItem {
+  attributes: {
+    Source: string;
+    // ...other properties if needed
+  };
+}
+
 const SourceFilter: React.FC<SourceFilterProps> = ({ setSelectedSources, selectedSources }) => {
-  const data: DataItem[] = useGetData(); 
-  const sources = Array.from(new Set(data.map((item) => item.attributes.Source))); 
+  const { data, isLoading } = useGetCardInfo();
+  if (isLoading) return <div>Loading sources...</div>;
+  if (!data) return null;
+
+  const sources = Array.from(
+    new Set(
+      (data as CardInfoItem[]).map((item) => item.attributes.Source)
+    )
+  );
 
   const toggleSource = (source: string) => {
     const newSources = selectedSources.includes(source)
@@ -19,18 +34,18 @@ const SourceFilter: React.FC<SourceFilterProps> = ({ setSelectedSources, selecte
   };
 
   return (
-    <div className="bg-white rounded-lg ">
-      <h3 className="font-semibold mb-2">Filter by Source:</h3>
-
-      <div className="max-h-80  p-2 rounded-lg">
-        {/* Single-column layout on smaller screens, two columns on larger screens */}
+    <div className="bg-white">
+      <h3 className="font-bold mb-2 text-[#444] uppercase tracking-wider" style={{ fontFamily: "'Public Sans', sans-serif", fontWeight: 700 }}>Filter by Source:</h3>
+      <div className="max-h-80 p-2">
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
           {sources.map((source) => (
             <Button
               key={source}
               onClick={() => toggleSource(source)}
-              className={`px-4 py-2 text-xs rounded-lg transition ${
-                selectedSources.includes(source) ? "bg-darkceladon text-white" : "bg-white border border-darkceladon text-darkceladon"
+              className={`px-4 py-2 text-xs border-2 border-[#444] font-bold shadow-[2px_2px_0_0_#aaa] rounded-none transition ${
+                selectedSources.includes(source)
+                  ? "bg-[#444] text-white hover:bg-[#ff6700]"
+                  : "bg-white text-[#444] hover:bg-[#ff6700] hover:text-white"
               }`}
             >
               {source}

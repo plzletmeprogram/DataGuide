@@ -17,52 +17,40 @@ const DataModal: React.FC<DataModalProps> = ({ title, description, source, theme
     <>
       <button
         onClick={() => setIsOpen(true)}
-        className="mt-2 px-4 py-2 bg-blue-500 text-white rounded-md hover:bg-blue-600 transition"
+        className="mt-2 px-4 py-2 bg-[#444] text-white rounded-none border-2 border-[#444] font-bold shadow-[2px_2px_0_0_#aaa] transition hover:bg-[#ff6700]"
       >
         View Details
       </button>
       <Dialog open={isOpen} onClose={() => setIsOpen(false)} className="relative z-50">
-        {/* The backdrop, rendered as a fixed sibling to the panel container */}
-        <DialogBackdrop className="fixed inset-0 bg-black/30" />
-
-        {/* Full-screen container to center the panel */}
+        <DialogBackdrop className="fixed inset-0 bg-[#444]/30" />
         <div className="fixed inset-0 flex w-screen items-center justify-center p-4">
-          {/* The actual dialog panel */}
-          <DialogPanel className="max-w-lg bg-white p-6 rounded-lg shadow-md space-y-4">
-            <DialogTitle className="font-bold text-lg">{title}</DialogTitle>
-            <Description className="text-gray-700">{description}</Description>
-
-            {/* Sources Section */}
-            <div className="border-t pt-2">
-              <h3 className="text-sm font-semibold text-darkceladon">Source</h3>
-              <p className="text-gray-600 text-xs">{source}</p>
+          <DialogPanel className="max-w-lg bg-white p-6 rounded-none shadow-[4px_4px_0_0_#aaa] border-4 border-[#444] space-y-4 font-bold text-[#444]">
+            <DialogTitle className="font-bold text-lg text-[#444]" style={{ fontFamily: "'Public Sans', sans-serif", fontWeight: 700 }}>{title}</DialogTitle>
+            <Description className="text-[#444]">{description}</Description>
+            <div className="border-t-2 border-[#444] pt-2">
+              <h3 className="text-sm font-bold text-[#444]" style={{ fontFamily: "'Public Sans', sans-serif', fontWeight: 700" }}>Source</h3>
+              <p className="text-[#444] text-xs">{source}</p>
             </div>
-
-            {/* Themes Section */}
-            <div className="border-t pt-2">
-              <h3 className="text-sm font-semibold text-darkceladon">Themes</h3>
-              <p className="text-gray-600 text-xs">{themes.join(", ")}</p>
+            <div className="border-t-2 border-[#444] pt-2">
+              <h3 className="text-sm font-bold text-[#444]" style={{ fontFamily: "'Public Sans', sans-serif", fontWeight: 700 }}>Themes</h3>
+              <p className="text-[#444] text-xs">{themes.join(", ")}</p>
             </div>
-
-            {/* URLs Section */}
-            <div className="border-t pt-2 flex flex-col space-y-2">
+            <div className="border-t-2 border-[#444] pt-2 flex flex-col space-y-2">
               <button
-                className="px-3 py-1 bg-blue-500 text-white text-sm rounded-md hover:bg-blue-600 transition"
+                className="px-3 py-1 bg-[#444] text-white text-sm font-bold border-2 border-[#444] shadow-[2px_2px_0_0_#aaa] rounded-none transition hover:bg-[#ff6700]"
                 onClick={() => navigator.clipboard.writeText(endpoint)}
               >
                 Copy Endpoint
               </button>
               <button
-                className="px-3 py-1 bg-blue-500 text-white text-sm rounded-md hover:bg-blue-600 transition"
+                className="px-3 py-1 bg-[#444] text-white text-sm font-bold border-2 border-[#444] shadow-[2px_2px_0_0_#aaa] rounded-none transition hover:bg-[#ff6700]"
                 onClick={() => navigator.clipboard.writeText(sourceUrl)}
               >
                 Copy Source URL
               </button>
             </div>
-
-            {/* Close Button */}
             <div className="flex justify-end">
-              <button onClick={() => setIsOpen(false)} className="px-4 py-2 bg-red-500 text-white rounded-md hover:bg-red-600 transition">
+              <button onClick={() => setIsOpen(false)} className="px-4 py-2 bg-[#444] text-white rounded-none border-2 border-[#444] font-bold shadow-[2px_2px_0_0_#aaa] transition hover:bg-[#ff6700]">
                 Close
               </button>
             </div>

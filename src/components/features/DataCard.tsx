@@ -23,27 +23,32 @@ const DataCard: React.FC<DataCardProps> = ({ title, description, source, imgSour
   };
 
   return (
-    <div className="max-w-xs rounded overflow-hidden shadow-sm text-darkceladon bg-brandwheat p-2 m-1 flex flex-col space-y-2 h-full">
+    <div className="max-w-xs rounded-none overflow-hidden shadow-[4px_4px_0_0_#aaa] text-[#444] bg-[#ededed] border-4 border-[#444] p-3 m-2 flex flex-col space-y-2 h-full font-bold">
       {/* Image Section */}
       <div className="relative">
-        <img src={imgSource} alt="Data Visualization" className="w-full h-20 object-cover rounded-md" /> {/* Smaller image */}
+        <img src={imgSource} alt="Data Visualization" className="w-full h-20 object-cover rounded-none border-2 border-[#444]" />
       </div>
 
       {/* Title & Description */}
-      <div className="flex-grow"> {/* Pushes button to bottom */}
-        <h2 className="font-family-sans font-medium text-sm mb-1">{title}</h2>
-        <h3 className="text-xs font-semibold text-darkceladon">Description</h3>
-        <p className="text-gray-700 text-xs">{description}</p>
+      <div className="flex-grow">
+        <h2
+          className="font-family-sans font-black text-base mb-1"
+          style={{ fontFamily: "'Public Sans', sans-serif", fontWeight: 900 }}
+        >
+          {title}
+        </h2>
+        <h3 className="text-xs font-bold text-[#444]" style={{ fontFamily: "'Public Sans', sans-serif", fontWeight: 700 }}>Description</h3>
+        <p className="text-[#444] text-xs">{description}</p>
       </div>
 
       {/* Sources & Themes Section */}
-      <div className="border-t pt-1">
-        <h3 className="text-xs font-semibold text-darkceladon">Sources</h3>
+      <div className="border-t-2 border-[#444] pt-1">
+        <h3 className="text-xs font-bold text-[#444]" style={{ fontFamily: "'Public Sans', sans-serif", fontWeight: 700 }}>Sources</h3>
         <SourceChips source={source} />
       </div>
 
-      <div className="border-t pt-1"> 
-        <h3 className="text-xs font-semibold text-darkceladon">Themes</h3>
+      <div className="border-t-2 border-[#444] pt-1">
+        <h3 className="text-xs font-bold text-[#444]" style={{ fontFamily: "'Public Sans', sans-serif", fontWeight: 700 }}>Themes</h3>
         <div className="flex flex-wrap gap-0.5 mt-0.5">
           {themes.map((theme, index) => (
             <ThemeChips key={index} theme={theme} />
@@ -51,11 +56,10 @@ const DataCard: React.FC<DataCardProps> = ({ title, description, source, imgSour
         </div>
       </div>
 
-      {/* Button Section - Always Anchored at Bottom */}
-      <div className="border-t pt-1 flex flex-col space-y-1 mt-auto"> {/* Added `mt-auto` to push this down */}
+      <div className="border-t-2 border-[#444] pt-1 flex flex-col space-y-1 mt-auto">
         <div className="relative group">
           <button
-            className="px-2 py-1 bg-blue-500 text-white text-xs rounded-md hover:bg-blue-600 transition"
+            className="px-2 py-1 bg-[#444] text-white text-xs font-bold border-2 border-[#444] shadow-[2px_2px_0_0_#aaa] rounded-none transition hover:bg-[#ff6700]"
             onClick={() => copyToClipboard(endpoint)}
             onMouseEnter={() => setTooltip(endpoint)}
             onMouseLeave={() => setTooltip(null)}
@@ -63,7 +67,7 @@ const DataCard: React.FC<DataCardProps> = ({ title, description, source, imgSour
             Copy Endpoint
           </button>
           {tooltip === endpoint && (
-            <span className="absolute left-1/2 transform -translate-x-1/2 -top-6 bg-gray-700 text-white text-xs rounded-md px-1 py-0.5 opacity-90">
+            <span className="absolute left-1 transform -translate-x-1 -top-15 bg-[#444] text-white text-[10px] rounded-none px-1 py-0.5 opacity-90 border-2 border-[#444] shadow-[2px_2px_0_0_#aaa] max-w-full w-max break-all whitespace-normal text-center">
               {endpoint}
             </span>
           )}
@@ -71,7 +75,7 @@ const DataCard: React.FC<DataCardProps> = ({ title, description, source, imgSour
         
         <div className="relative group">
           <button
-            className="px-2 py-1 bg-blue-500 text-white text-xs rounded-md hover:bg-blue-600 transition"
+            className="px-2 py-1 bg-[#444] text-white text-xs font-bold border-2 border-[#444] shadow-[2px_2px_0_0_#aaa] rounded-none transition hover:bg-[#ff6700]"
             onClick={() => copyToClipboard(sourceUrl)}
             onMouseEnter={() => setTooltip(sourceUrl)}
             onMouseLeave={() => setTooltip(null)}
@@ -79,14 +83,11 @@ const DataCard: React.FC<DataCardProps> = ({ title, description, source, imgSour
             Copy Source URL
           </button>
           {tooltip === sourceUrl && (
-            <span className="absolute left-1/2 transform -translate-x-1/2 -top-6 bg-gray-700 text-white text-xs rounded-md px-1 py-0.5 opacity-90">
+            <span className="absolute left-1 transform -translate-x-1 -top-10 bg-[#444] text-white text-[10px] rounded-none px-1 py-0.5 opacity-90 border-2 border-[#444] shadow-[2px_2px_0_0_#aaa] max-w-full w-max break-all whitespace-normal text-center">
               {sourceUrl}
             </span>
           )}
         </div>
-
-        {/* "See Details" Button - Always at Bottom */}
-       
       </div>
       
       {/* Data Modal Component */}
