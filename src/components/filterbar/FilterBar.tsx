@@ -39,7 +39,7 @@ const FilterBar: React.FC<FilterBarProps> = ({ setFilters, setSearchParams }) =>
   };
 
   return (
-    <div className="flex flex-col space-y-2  pt-3 px-1 mt-4 bg-white min-h-[200px] ml-10">
+    <div className="flex flex-col space-y-2 pb-4 pt-3 px-1 mt-4 bg-white min-h-[200px] ml-10 h-[calc(100vh-100px)]">
       {/* Source Filter Accordion */}
       <Disclosure>
         {({ open }) => (
@@ -49,11 +49,16 @@ const FilterBar: React.FC<FilterBarProps> = ({ setFilters, setSearchParams }) =>
               <span className="ml-2 text-lg font-bold">{open ? "−" : "+"}</span>
             </Disclosure.Button>
             <Disclosure.Panel
-              className={`mt-1 p-1  bg-white overflow-y-auto transition-all duration-200 ${
-                open ? "min-h-[180px] max-h-[390px] " : "min-h-[60px] max-h-[120px]"
-              } border-2 border-[#444] shadow-[2px_2px_0_0_#aaa] rounded-none `}
+              className={`relative mt-1 p-1 bg-white transition-all duration-200 border-2 border-[#444] shadow-[2px_2px_0_0_#aaa] rounded-none flex flex-col ${
+                open ? "min-h-[260px] max-h-[480px]" : "min-h-[60px] max-h-[120px]"
+              }`}
+              style={{ overflowY: "auto" }}
             >
-              <SourceFilter setSelectedSources={setSelectedSources} selectedSources={selectedSources} />
+              <div className="flex-1 overflow-y-auto">
+                <SourceFilter setSelectedSources={setSelectedSources} selectedSources={selectedSources} />
+              </div>
+              {/* Spacer to ensure buttons don't sit on the bottom */}
+              <div className="h-6 flex-shrink-0" />
             </Disclosure.Panel>
           </>
         )}

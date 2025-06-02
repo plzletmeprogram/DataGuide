@@ -41,7 +41,7 @@ const ThemeFilter: React.FC<ThemeFilterProps> = ({ setSelectedThemes, selectedTh
           <Button
             key={theme}
             onClick={() => toggleTheme(theme)}
-            className={`px-4 py-2 text-sm border-2 border-[#444] font-bold shadow-[2px_2px_0_0_#aaa] rounded-none transition ${
+            className={`px-4 py-3 text-sm border-2 border-[#444] font-bold shadow-[2px_2px_0_0_#aaa] rounded-none transition ${
               selectedThemes.includes(theme)
                 ? "bg-[#444] text-white hover:bg-[#ff6700]"
                 : "bg-white text-[#444] hover:bg-[#ff6700] hover:text-white"

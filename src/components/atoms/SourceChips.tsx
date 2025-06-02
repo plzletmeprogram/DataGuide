@@ -6,7 +6,7 @@ interface SourceChipsProps {
 
 const SourceChips: React.FC<SourceChipsProps> = ({ source }) => {
   return (
-    <span className="inline-block px-3 py-1 text-sm font-bold text-[#444] bg-white border-2 border-[#444] rounded-none">
+    <span className="inline-block px-3 py-1 text-xs font-bold text-[#444] bg-white border-1 border-[#444] rounded-2xl">
       {source}
     </span>
   );
