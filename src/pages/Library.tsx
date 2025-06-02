@@ -32,7 +32,7 @@ const Library: React.FC = () => {
       {/* Divider - only as tall as the content */}
       <div className="w-px bg-black self-stretch mx-2" />
       {/* DataBoard fills the rest */}
-      <section className="flex-1 overflow-auto">
+      <section className="flex-1 overflow-y-auto pb-12">
         <DataBoard filters={filters} />
       </section>
     </main>

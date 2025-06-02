@@ -4,6 +4,7 @@ import SourceChips from "../atoms/SourceChips";
 import ThemeChips from "../atoms/ThemeChips";
 
 interface DataCardProps {
+  id: string;
   title: string;
   description: string;
   source: string;
@@ -13,7 +14,7 @@ interface DataCardProps {
   sourceUrl: string;
 }
 
-const DataCard: React.FC<DataCardProps> = ({ title, description, source, imgSource, themes, endpoint, sourceUrl }) => {
+const DataCard: React.FC<DataCardProps> = ({ id, title, description, source, imgSource, themes, endpoint, sourceUrl }) => {
   const [tooltip, setTooltip] = useState<string | null>(null);
 
   const copyToClipboard = (url: string) => {
@@ -24,9 +25,17 @@ const DataCard: React.FC<DataCardProps> = ({ title, description, source, imgSour
 
   return (
     <div className="max-w-xs rounded-none overflow-hidden shadow-[4px_4px_0_0_#aaa] text-[#444] bg-[#ededed] border-4 border-[#444] p-3 m-2 flex flex-col space-y-2 h-full font-bold">
-      {/* Image Section */}
+      {/* ID */}
+      <div className="mb-1">
+        <span
+          className="inline-block px-2 py-0 border-2 border-[#444] rounded-none bg-white text-m text-[#444] font-bold"
+          style={{ fontFamily: "'Public Sans', sans-serif", fontWeight: 700 }}
+        >
+          ID:&nbsp;&nbsp;{id}
+        </span>
+      </div>
       <div className="relative">
-        <img src={imgSource} alt="Data Visualization" className="w-full h-20 object-cover rounded-none border-2 border-[#444]" />
+        <img src={imgSource} alt="needs image" className="w-full h-20 object-cover rounded-none border-2 border-[#444]" />
       </div>
 
       {/* Title & Description */}

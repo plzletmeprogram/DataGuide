@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 
-// Add Bagel Fat One font import in your index.css if not already present:
-// @import url('https://fonts.googleapis.com/css2?family=Bagel+Fat+One&display=swap');
+// Add Days One font import in your index.css if not already present:
+// @import url('https://fonts.googleapis.com/css2?family=Days+One&display=swap');
 
 const Navbar: React.FC = () => {
   return (
@@ -9,10 +9,12 @@ const Navbar: React.FC = () => {
       <div className="flex justify-between items-center px-4 sm:px-6 md:px-8 lg:px-12 h-full">
         
         <div
-          className="text-center font-black text-black uppercase tracking-tight xs:text-xs sm:text-xs md:text-lg lg:text-2xl xl:text-3xl"
-          style={{ fontFamily: "'Bagel Fat One', cursive" }}
+          className="text-center font-black  text-black xs:text-xs sm:text-xs md:text-lg lg:text-xl xl:text-2xl tracking-tighter"
+          style={{ fontFamily: "'Days One', sans-serif", letterSpacing: "0.0em" }}
         >
-          <Link to="/">Urban Design Data Guide</Link>
+          <Link to="">
+            Urban Design Data Guide
+          </Link>
         </div>
 
         <ul className="flex space-x-4">
