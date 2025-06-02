@@ -68,7 +68,7 @@ const DataCard: React.FC<DataCardProps> = ({ id, title, description, source, img
       <div className="border-t-2 border-[#444] pt-1 flex flex-col space-y-1 mt-auto">
         <div className="relative group">
           <button
-            className="px-2 py-1 bg-[#444] text-white text-xs font-bold border-2 border-[#444] shadow-[2px_2px_0_0_#aaa] rounded-none transition hover:bg-[#ff6700]"
+            className="px-2 py-1 bg-white text-[#444] text-xs font-bold border-2 border-[#444] shadow-[2px_2px_0_0_#aaa] rounded-none transition hover:bg-[#ff6700]"
             onClick={() => copyToClipboard(endpoint)}
             onMouseEnter={() => setTooltip(endpoint)}
             onMouseLeave={() => setTooltip(null)}
@@ -84,7 +84,7 @@ const DataCard: React.FC<DataCardProps> = ({ id, title, description, source, img
         
         <div className="relative group">
           <button
-            className="px-2 py-1 bg-[#444] text-white text-xs font-bold border-2 border-[#444] shadow-[2px_2px_0_0_#aaa] rounded-none transition hover:bg-[#ff6700]"
+            className="px-2 py-1  bg-white text-[#444] text-xs font-bold border-2 border-[#444] shadow-[2px_2px_0_0_#aaa] rounded-none transition hover:bg-[#ff6700]"
             onClick={() => copyToClipboard(sourceUrl)}
             onMouseEnter={() => setTooltip(sourceUrl)}
             onMouseLeave={() => setTooltip(null)}

@@ -21,8 +21,7 @@ const Home: React.FC = () => {
         style={{ fontFamily: "'Public Sans', sans-serif" }}
       >
         The Urban Design Guide pools together nation-wide datasets about the
-        build environment from trusted public and private sources. To view the
-        data visit the DataBoard.
+        build environment from trusted public and private sources.
       </p>
     </div>
   );

@@ -25,7 +25,7 @@ const DataBoard: React.FC<DataBoardProps> = ({ filters }) => {
   );
 
   return (
-    <div className="p-2 bg-white text-black">
+    <div className="p-2 py-5 bg-white text-black">
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-x-2 gap-y-4">
         {filteredData.map((item: DataItem, index: number) => (
           <DataCard

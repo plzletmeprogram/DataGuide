@@ -17,7 +17,7 @@ const DataModal: React.FC<DataModalProps> = ({ title, description, source, theme
     <>
       <button
         onClick={() => setIsOpen(true)}
-        className="mt-2 px-4 py-2 bg-[#444] text-white rounded-none border-2 border-[#444] font-bold shadow-[2px_2px_0_0_#aaa] transition hover:bg-[#ff6700]"
+        className="mt-2 px-4 py-2  bg-white text-[#444] rounded-none border-2 border-[#444] font-bold shadow-[2px_2px_0_0_#aaa] transition hover:bg-[#ff6700]"
       >
         View Details
       </button>

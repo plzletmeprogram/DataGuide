@@ -49,9 +49,9 @@ const FilterBar: React.FC<FilterBarProps> = ({ setFilters, setSearchParams }) =>
               <span className="ml-2 text-lg font-bold">{open ? "−" : "+"}</span>
             </Disclosure.Button>
             <Disclosure.Panel
-              className={`mt-1 p-1 bg-white overflow-y-auto transition-all duration-200 ${
-                open ? "min-h-[180px] max-h-[320px]" : "min-h-[60px] max-h-[120px]"
-              } border-2 border-[#444] shadow-[2px_2px_0_0_#aaa] rounded-none`}
+              className={`mt-1 p-1  bg-white overflow-y-auto transition-all duration-200 ${
+                open ? "min-h-[180px] max-h-[390px] " : "min-h-[60px] max-h-[120px]"
+              } border-2 border-[#444] shadow-[2px_2px_0_0_#aaa] rounded-none `}
             >
               <SourceFilter setSelectedSources={setSelectedSources} selectedSources={selectedSources} />
             </Disclosure.Panel>
